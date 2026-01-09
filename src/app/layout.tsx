@@ -20,7 +20,12 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "DAPI OIL SARL",
   description: "Logistique et distribution pétrolière moderne par DAPI OIL SARL.",
-  metadataBase: new URL("https://www.dapioil.cd")
+  metadataBase: new URL("https://www.dapioil.cd"),
+  icons: {
+    icon: "/asset/logo/2-removebg-preview.png",
+    shortcut: "/asset/logo/2-removebg-preview.png",
+    apple: "/asset/logo/2-removebg-preview.png"
+  }
 };
 
 export default function RootLayout({
