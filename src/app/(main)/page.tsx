@@ -109,14 +109,14 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="w-full max-w-7xl"
             >
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-white/70  py-1 px-2 text-sm font-medium text-brand-green backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-green/20 bg-white/70  py-1 px-2 text-sm font-medium text-brand-green backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
                 Leader downstream en RDC
               </div>
               <h1 className="font-display text-3xl font-extrabold leading-tight md:text-7xl">
                 Votre <br />
                 Partenaire fiable en <br />
-                <span className="bg-gradient-to-r from-brand-red via-brand-coral to-brand-yellow bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-brand-green via-brand-forest to-brand-green bg-clip-text text-transparent">
                   approvisionnement.
                 </span>
               </h1>
@@ -126,7 +126,7 @@ export default function HomePage() {
                 opérations.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <button className="group flex items-center justify-center gap-2 rounded-lg bg-brand-red px-8 py-4 font-bold text-white transition-all hover:bg-brand-coral">
+                <button className="group flex items-center justify-center gap-2 rounded-lg bg-brand-green px-8 py-4 font-bold text-white transition-all hover:bg-brand-forest">
                   Découvrir nos solutions
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </button>

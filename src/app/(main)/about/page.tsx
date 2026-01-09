@@ -33,7 +33,7 @@ export default function AboutPage() {
               Moteur du développement{" "}
               <span className="text-brand-red">congolais</span>
             </h1>
-            <p className="mt-6 text-xl leading-relaxed text-gray-300">
+            <p className="mt-6 text-xl leading-relaxed text-[var(--text)]">
               Une expertise locale pour une distribution sans faille à travers
               la RDC. Nous transformons les défis logistiques en opportunités de
               croissance.
