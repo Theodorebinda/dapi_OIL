@@ -54,14 +54,18 @@ const Navbar = () => {
               priority
             />
           </span>
-          <span className="flex flex-col leading-none">
+          <div className="flex flex-col leading-none">
             <span className="font-display text-xl font-bold tracking-tight text-white">
-              DAPI <span className="text-gold-500">OIL</span>
+              DAPI <span className="text-brand-green">OIL</span>
             </span>
-            <span className="text-[0.65rem] uppercase tracking-[0.2em] text-gray-400">
-              SARL
-            </span>
-          </span>
+            <div className="flex items-center gap-2">
+              <div className="h-[4px] w-4 bg-gray-400" aria-hidden />
+              <span className="text-[0.65rem] uppercase tracking-[0.2em] text-brand-green">
+                SARL
+              </span>
+              <div className="h-[4px] w-4 bg-gray-400" aria-hidden />
+            </div>
+          </div>
         </Link>
 
         <div className="hidden items-center gap-6 md:flex">

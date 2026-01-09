@@ -57,7 +57,7 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="w-full max-w-7xl"
             >
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-white/70  py-1 text-sm font-medium text-brand-red backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-white/70  py-1 px-2 text-sm font-medium text-brand-red backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
                 Leader downstream en RDC
               </div>
