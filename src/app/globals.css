@@ -10,13 +10,17 @@
   --brand-yellow: #f6fe51;
   --brand-forest: #245134;
   --bg: #ffffff;
+  --bg-rgb: 255, 255, 255;
   --text: #0f172a;
+  --text-rgb: 15, 23, 42;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
   --bg: #0b1220;
+  --bg-rgb: 11, 18, 32;
   --text: #e2e8f0;
+  --text-rgb: 226, 232, 240;
 }
 
 body {

@@ -57,7 +57,7 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="w-full max-w-7xl"
             >
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-white/70  py-1 px-2 text-sm font-medium text-brand-red backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-white/70  py-1 px-2 text-sm font-medium text-brand-green backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
                 Leader downstream en RDC
               </div>
@@ -68,17 +68,17 @@ export default function HomePage() {
                   approvisionnement.
                 </span>
               </h1>
-              <p className="mt-6 max-w-2xl text-xl leading-relaxed text-gray-200">
+              <p className="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--text)]">
                 De la fourniture à la livraison, nous assurons un
                 approvisionnement pétrolier continu et fiable pour soutenir vos
-                opérations.”
+                opérations.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <button className="group flex items-center justify-center gap-2 rounded-lg bg-brand-red px-8 py-4 font-bold text-white transition-all hover:bg-brand-coral">
                   Découvrir nos solutions
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </button>
-                <button className="rounded-lg border border-white/20 px-8 py-4 font-semibold text-white transition-all hover:bg-white/5">
+                <button className="rounded-lg border border-[var(--text)]/20 px-8 py-4 font-semibold text-[var(--text)] transition-all hover:bg-[var(--text)]/5">
                   Contactez-nous
                 </button>
               </div>
@@ -87,7 +87,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-slate-50 py-20 dark:border-white/5 dark:bg-petrol-900">
+      <section className="bg-[rgb(var(--bg-rgb)/0.95)] py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
@@ -99,10 +99,10 @@ export default function HomePage() {
                 transition={{ delay: index * 0.05 }}
                 className="text-center md:text-left"
               >
-                <h3 className="font-display text-4xl font-bold text-white md:text-5xl">
+                <h3 className="font-display text-4xl font-bold text-[var(--text)] md:text-5xl">
                   {stat.value}
                 </h3>
-                <p className="mt-2 text-sm font-medium uppercase tracking-wide text-brand-green">
+                <p className="mt-2 text-sm font-medium uppercase tracking-wide text-[var(--brand-green)]">
                   {stat.label}
                 </p>
               </motion.div>
@@ -111,23 +111,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 dark:bg-petrol-950">
+      <section className="bg-[rgb(var(--bg-rgb)/0.2)] py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-red">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-red)]">
                 Notre expertise
               </p>
               <h2 className="font-display text-3xl font-bold md:text-4xl">
                 De l&apos;importation à la distribution finale, une maîtrise
                 intégrale de la chaîne de valeur.
               </h2>
-              <p className="max-w-xl text-gray-400">
+              <p className="max-w-xl text-[var(--text)]">
                 Nous sécurisons chaque maillon pour garantir un
                 approvisionnement continu des industries et des territoires.
               </p>
             </div>
-            <button className="hidden items-center gap-2 text-brand-red transition-colors hover:text-brand-coral md:flex">
+            <button className="hidden items-center gap-2 text-[var(--brand-red)] transition-colors hover:text-[var(--brand-coral)] md:flex">
               Voir toutes les activités <ArrowRight className="h-4 w-4" />
             </button>
           </div>
@@ -149,17 +149,17 @@ export default function HomePage() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-petrol-950 via-petrol-950/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-[var(--bg-60)] to-transparent" />
                 </div>
 
                 <div className="absolute inset-x-0 bottom-0 z-10 p-8">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--brand-red)] text-white">
                     <activity.icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-display text-2xl font-bold">
                     {activity.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-200 opacity-0 transition-all duration-500 group-hover:opacity-100">
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--text)] opacity-0 transition-all duration-500 group-hover:opacity-100">
                     {activity.desc}
                   </p>
                 </div>
