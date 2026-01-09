@@ -40,51 +40,56 @@ const storySections: StorySection[] = [
   {
     id: "infra",
     title: "Infra pétrolière de confiance",
-    description: "Réseau national de dépôts sécurisés et contrôles qualité continus pour garantir la disponibilité.",
-    image: "https://images.unsplash.com/photo-1518005056765-7ec60bfb90f9?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "Réseau national de dépôts sécurisés et contrôles qualité continus pour garantir la disponibilité.",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
     badges: ["Audit HSE", "24/7 Monitoring"],
     stats: [
       { label: "Capacité stockage", value: "250k m³" },
-      { label: "Taux dispo", value: "99.7%" }
+      { label: "Taux dispo", value: "99.7%" },
     ],
     cta: { label: "Découvrir nos dépôts", href: "/about" },
-    highlight: "Infrastructure"
+    highlight: "Infrastructure",
   },
   {
     id: "flotte",
     title: "Flotte multimodale prête",
-    description: "Camions, barges et rail pour sécuriser les flux en zones complexes, avec maintenance prédictive.",
-    image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "Camions, barges et rail pour sécuriser les flux en zones complexes, avec maintenance prédictive.",
+    image:
+      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1200&auto=format&fit=crop",
     badges: ["Track & trace", "Maintenance IA"],
     steps: [
       "Planification dynamique des tournées",
       "Suivi temps réel des températures",
-      "Protocoles d'escalade incidents"
+      "Protocoles d'escalade incidents",
     ],
     stats: [{ label: "Livraisons/an", value: "18k" }],
     cta: { label: "Consulter nos flux", href: "/contact" },
-    highlight: "Opérations"
+    highlight: "Opérations",
   },
   {
     id: "rse",
     title: "Engagement RSE terrain",
-    description: "Programmes santé, sécurité et communautés locales intégrés à chaque corridor logistique.",
-    image: "https://images.unsplash.com/photo-1591735179858-95eec7cd6e1d?q=80&w=1200&auto=format&fit=crop",
+    description:
+      "Programmes santé, sécurité et communautés locales intégrés à chaque corridor logistique.",
+    image:
+      "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2109&auto=format&fit=crop",
     badges: ["Communautés", "Sécurité"],
     stats: [
       { label: "Sessions HSE", value: "+300/an" },
-      { label: "Projets locaux", value: "42" }
+      { label: "Projets locaux", value: "42" },
     ],
     cta: { label: "Voir nos actions", href: "/about" },
-    highlight: "RSE"
-  }
+    highlight: "RSE",
+  },
 ];
-
 
 export default function HomePage() {
   return (
     <div className="space-y-0 bg-white text-slate-900 dark:bg-petrol-950 dark:text-white">
-      <section className="relative flex min-h-screen items-center overflow-hidden">
+      <section className="relative flex min-h-screen items-center overflow-hidden pt-10 md:pt-0">
         <div className="absolute inset-0">
           <Image
             src={HeaderImage}
@@ -108,14 +113,14 @@ export default function HomePage() {
                 <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
                 Leader downstream en RDC
               </div>
-              <h1 className="font-display text-5xl font-extrabold leading-tight md:text-7xl">
+              <h1 className="font-display text-3xl font-extrabold leading-tight md:text-7xl">
                 Votre <br />
                 Partenaire fiable en <br />
                 <span className="bg-gradient-to-r from-brand-red via-brand-coral to-brand-yellow bg-clip-text text-transparent">
                   approvisionnement.
                 </span>
               </h1>
-              <p className="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--text)]">
+              <p className="mt-6 max-w-2xl md:text-xl text-base leading-relaxed text-[var(--text)]">
                 De la fourniture à la livraison, nous assurons un
                 approvisionnement pétrolier continu et fiable pour soutenir vos
                 opérations.
@@ -158,7 +163,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[rgb(var(--bg-rgb)/0.2)] py-24">
+      <section className="bg-gray-50 dark:bg-gray-800 py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="space-y-4">

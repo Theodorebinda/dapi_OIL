@@ -8,20 +8,24 @@ import { useActiveSection } from "@/hooks/useActiveSection";
 import { SectionTextBlock } from "./SectionTextBlock";
 import { SectionImageBlock } from "./SectionImageBlock";
 
-export default function StickyVisualStory({ sections }: { sections: StorySection[] }) {
+export default function StickyVisualStory({
+  sections,
+}: {
+  sections: StorySection[];
+}) {
   const { activeIndex, sectionRefs } = useActiveSection(sections.length);
   const router = useRouter();
 
   if (!sections || sections.length === 0) return null;
 
   return (
-    <div className="layout-shell mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:px-10 lg:grid-cols-2">
+    <div className="layout-shell mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-16  lg:grid-cols-2">
       {/* Colonne texte (desktop) */}
-      <div className="hidden flex-col gap-40 lg:flex">
+      <div className="hidden flex-col gap-40 lg:flex mb-20">
         {sections.map((section, index) => (
           <section
             key={section.id}
-            ref={(el) => {
+            ref={(el: HTMLDivElement | null) => {
               sectionRefs.current[index] = el;
             }}
             className="scroll-m-24"
@@ -44,7 +48,10 @@ export default function StickyVisualStory({ sections }: { sections: StorySection
       {/* Version mobile : cartes empilées */}
       <div className="space-y-8 lg:hidden">
         {sections.map((section) => (
-          <article key={section.id} className="overflow-hidden rounded-2xl border border-[rgb(var(--text-rgb)/0.08)] bg-[rgb(var(--bg-rgb)/0.7)] shadow-sm">
+          <article
+            key={section.id}
+            className="overflow-hidden rounded-2xl  bg-[rgb(var(--bg-rgb)/0.7)] shadow-sm"
+          >
             <div className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
                 src={section.image}
@@ -54,13 +61,17 @@ export default function StickyVisualStory({ sections }: { sections: StorySection
                 sizes="100vw"
               />
             </div>
-            <div className="space-y-4 p-6">
+            <div className="space-y-4 py-4">
               <div className="space-y-2">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-red)]">
                   {section.highlight || ""}
                 </p>
-                <h3 className="text-2xl font-bold text-[var(--text)]">{section.title}</h3>
-                <p className="text-[var(--text)]/80 leading-relaxed">{section.description}</p>
+                <h3 className="text-2xl font-bold text-[var(--text)]">
+                  {section.title}
+                </h3>
+                <p className="text-[var(--text)]/80 leading-relaxed">
+                  {section.description}
+                </p>
               </div>
 
               {section.badges && section.badges.length > 0 && (
@@ -90,9 +101,16 @@ export default function StickyVisualStory({ sections }: { sections: StorySection
               {section.stats && section.stats.length > 0 && (
                 <div className="grid grid-cols-2 gap-4 text-[var(--text)]">
                   {section.stats.map((stat) => (
-                    <div key={stat.label} className="rounded-xl border border-[rgb(var(--text-rgb)/0.1)] bg-[rgb(var(--bg-rgb)/0.6)] p-4">
-                      <div className="text-lg font-bold text-[var(--brand-red)]">{stat.value}</div>
-                      <div className="text-sm text-[var(--text)]/70">{stat.label}</div>
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-[rgb(var(--text-rgb)/0.1)] bg-[rgb(var(--bg-rgb)/0.6)] p-4"
+                    >
+                      <div className="text-lg font-bold text-[var(--brand-red)]">
+                        {stat.value}
+                      </div>
+                      <div className="text-sm text-[var(--text)]/70">
+                        {stat.label}
+                      </div>
                     </div>
                   ))}
                 </div>
