@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Droplet, Globe2, Truck } from "lucide-react";
 import type { StatItem } from "@/lib/types";
+import type { StorySection } from "@/lib/story-section.type";
+import StickyVisualStory from "@/components/sticky/StickyVisualStory";
 import HeaderImage from "@/../asset/images/portrait-femme.jpg";
 
 const stats: StatItem[] = [
@@ -33,6 +35,51 @@ const activities = [
   //   img: "https://images.unsplash.com/photo-1625921764953-2947a1955b20?q=80&w=2072&auto=format&fit=crop",
   // },
 ];
+
+const storySections: StorySection[] = [
+  {
+    id: "infra",
+    title: "Infra pétrolière de confiance",
+    description: "Réseau national de dépôts sécurisés et contrôles qualité continus pour garantir la disponibilité.",
+    image: "https://images.unsplash.com/photo-1518005056765-7ec60bfb90f9?q=80&w=1200&auto=format&fit=crop",
+    badges: ["Audit HSE", "24/7 Monitoring"],
+    stats: [
+      { label: "Capacité stockage", value: "250k m³" },
+      { label: "Taux dispo", value: "99.7%" }
+    ],
+    cta: { label: "Découvrir nos dépôts", href: "/about" },
+    highlight: "Infrastructure"
+  },
+  {
+    id: "flotte",
+    title: "Flotte multimodale prête",
+    description: "Camions, barges et rail pour sécuriser les flux en zones complexes, avec maintenance prédictive.",
+    image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1200&auto=format&fit=crop",
+    badges: ["Track & trace", "Maintenance IA"],
+    steps: [
+      "Planification dynamique des tournées",
+      "Suivi temps réel des températures",
+      "Protocoles d'escalade incidents"
+    ],
+    stats: [{ label: "Livraisons/an", value: "18k" }],
+    cta: { label: "Consulter nos flux", href: "/contact" },
+    highlight: "Opérations"
+  },
+  {
+    id: "rse",
+    title: "Engagement RSE terrain",
+    description: "Programmes santé, sécurité et communautés locales intégrés à chaque corridor logistique.",
+    image: "https://images.unsplash.com/photo-1591735179858-95eec7cd6e1d?q=80&w=1200&auto=format&fit=crop",
+    badges: ["Communautés", "Sécurité"],
+    stats: [
+      { label: "Sessions HSE", value: "+300/an" },
+      { label: "Projets locaux", value: "42" }
+    ],
+    cta: { label: "Voir nos actions", href: "/about" },
+    highlight: "RSE"
+  }
+];
+
 
 export default function HomePage() {
   return (
@@ -149,7 +196,7 @@ export default function HomePage() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-[var(--bg-60)] to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-[rgb(var(--bg-rgb)/0.6)] to-transparent" />
                 </div>
 
                 <div className="absolute inset-x-0 bottom-0 z-10 p-8">
@@ -168,6 +215,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <StickyVisualStory sections={storySections} />
     </div>
   );
 }
