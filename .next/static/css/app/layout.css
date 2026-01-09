@@ -1111,6 +1111,9 @@ video {
 .bg-\[var\(--brand-red\)\] {
   background-color: var(--brand-red);
 }
+.bg-\[var\(--brand-green\)\] {
+  background-color: var(--brand-green);
+}
 .bg-\[linear-gradient\(to_right\2c \#80808012_1px\2c transparent_1px\)\2c linear-gradient\(to_bottom\2c \#80808012_1px\2c transparent_1px\)\] {
   background-image: linear-gradient(to right,#80808012 1px,transparent 1px),linear-gradient(to bottom,#80808012 1px,transparent 1px);
 }
@@ -1416,6 +1419,18 @@ video {
 .text-\[var\(--text\)\] {
   color: var(--text);
 }
+.underline {
+  text-decoration-line: underline;
+}
+.decoration-\[var\(--brand-green\)\] {
+  text-decoration-color: var(--brand-green);
+}
+.decoration-2 {
+  text-decoration-thickness: 2px;
+}
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
 .opacity-0 {
   opacity: 0;
 }
@@ -1579,6 +1594,10 @@ a {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-\[var\(--brand-red\)\]:hover {
+  color: var(--brand-red);
 }
 
 .hover\:shadow-lg:hover {

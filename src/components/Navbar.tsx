@@ -59,11 +59,17 @@ const Navbar = () => {
               DAPI <span className="text-brand-green">OIL</span>
             </span>
             <div className="flex items-center gap-2">
-              <div className="h-[4px] w-4 bg-gray-400" aria-hidden />
-              <span className="text-[0.65rem] uppercase tracking-[0.2em] text-brand-green">
+              <div
+                className="h-[4px] w-4 bg-[var(--brand-green)]  rounded-full"
+                aria-hidden
+              />
+              <span className="text-[0.65rem] uppercase tracking-[0.2em] text-brand-green underline decoration-[var(--brand-green)] decoration-2 underline-offset-4">
                 SARL
               </span>
-              <div className="h-[4px] w-4 bg-gray-400" aria-hidden />
+              <div
+                className="h-[4px] w-4 bg-[var(--brand-red)] rounded-full"
+                aria-hidden
+              />
             </div>
           </div>
         </Link>
@@ -78,7 +84,7 @@ const Navbar = () => {
                 className={`group relative text-sm font-medium tracking-wide transition-colors ${
                   isActive
                     ? "text-[var(--brand-red)]"
-                    : "text-[color:rgba(255,255,255,0.78)] hover:text-white"
+                    : "text-[var(--text)] hover:text-[var(--brand-red)]"
                 }`}
               >
                 {link.label}
@@ -121,7 +127,7 @@ const Navbar = () => {
                   className={`block text-lg font-medium ${
                     pathname === link.href
                       ? "text-[var(--brand-red)]"
-                      : "text-[color:rgba(255,255,255,0.82)] hover:text-white"
+                      : "text-[var(--text)] hover:text-[var(--brand-red)]"
                   }`}
                 >
                   {link.label}
