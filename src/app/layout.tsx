@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Inter, Playfair_Display } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,9 +18,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Congo Energy Logistics",
-  description: "Logistique pétrolière moderne en RDC.",
-  metadataBase: new URL("https://www.congoenergy.cd")
+  title: "DAPI OIL SARL",
+  description: "Logistique et distribution pétrolière moderne par DAPI OIL SARL.",
+  metadataBase: new URL("https://www.dapioil.cd")
 };
 
 export default function RootLayout({
@@ -28,11 +29,11 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="fr" className="bg-petrol-950">
+    <html lang="fr" className="dark bg-white dark:bg-petrol-950">
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans bg-petrol-950 text-slate-50`}
+        className={`${inter.variable} ${playfair.variable} font-sans bg-white text-slate-900 dark:bg-petrol-950 dark:text-slate-50`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

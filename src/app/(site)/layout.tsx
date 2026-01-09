@@ -1,15 +1,26 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from "@/components/shards/Footer";
 
-export default function SiteLayout({ children }: { children: ReactNode }) {
+// import Header from "./components/header";
+// import MobileHeader from "./components/MobileHeader";
+// import FooterComponent from "./components/footer";
+// import { ThemeSync } from "./components/ThemeSync";
+
+export default function MainPublicLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <div className="flex min-h-screen flex-col bg-petrol-950 text-slate-50">
-      <Navbar />
-      <main className="flex-1 pt-24 md:pt-28">{children}</main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen text-neutral-900 flex flex-col">
+        <Navbar />
+        <main className="flex-1 ">{children}</main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }

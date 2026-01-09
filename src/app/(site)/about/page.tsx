@@ -16,7 +16,7 @@ import { FeatureCard } from "@/components/ui/FeatureCard";
 
 export default function AboutPage() {
   return (
-    <div className="bg-petrol-950 text-white">
+    <div className="bg-white text-slate-900 dark:bg-petrol-950 dark:text-white">
       <section className="relative overflow-hidden py-24 md:py-32">
         <div className="pointer-events-none absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -31,7 +31,7 @@ export default function AboutPage() {
           >
             <h1 className="font-display text-4xl font-bold md:text-6xl">
               Moteur du développement{" "}
-              <span className="text-gold-500">congolais</span>
+              <span className="text-brand-red">congolais</span>
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-gray-300">
               Une expertise locale pour une distribution sans faille à travers
@@ -57,7 +57,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-petrol-900/30 py-20 md:py-32">
+      <section className="bg-slate-100 py-20 md:py-32 dark:bg-petrol-900/30">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 px-6 lg:flex-row">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -65,7 +65,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="lg:w-1/2"
           >
-            <div className="mb-6 inline-block rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 text-sm font-semibold text-emerald-400">
+            <div className="mb-6 inline-block rounded-full border border-brand-green/20 bg-brand-green/10 px-4 py-2 text-sm font-semibold text-brand-green">
               Notre mission
             </div>
             <h2 className="font-display text-3xl font-bold leading-tight md:text-4xl">
@@ -89,11 +89,11 @@ export default function AboutPage() {
 
             <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-8">
               <div>
-                <h4 className="text-2xl font-bold text-gold-500">100%</h4>
+                <h4 className="text-2xl font-bold text-brand-red">100%</h4>
                 <p className="text-sm text-gray-400">Couverture nationale</p>
               </div>
               <div>
-                <h4 className="text-2xl font-bold text-gold-500">+20 ans</h4>
+                <h4 className="text-2xl font-bold text-brand-red">+20 ans</h4>
                 <p className="text-sm text-gray-400">
                   D&apos;expérience terrain
                 </p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="relative lg:w-1/2"
           >
-            <div className="relative z-10 rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/0 p-2 backdrop-blur-md">
+            <div className="relative z-10 rounded-2xl border border-white/10 bg-gradient-to-br from-white/20 via-brand-yellow/10 to-white/0 p-2 backdrop-blur-md">
               <Image
                 src="https://images.unsplash.com/photo-1628135893699-5285223e74c8?q=80&w=2670&auto=format&fit=crop"
                 alt="Mission Congo Energy Logistics"
@@ -124,7 +124,7 @@ export default function AboutPage() {
       <section className="py-20 md:py-32">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
-            <h2 className="font-display text-3xl font-bold md:text-4xl">
+            <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-red">
               Notre expertise
             </h2>
             <p className="mt-4 text-gray-400">
@@ -169,7 +169,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/5 bg-petrol-900 py-20">
+      <section className="border-y border-slate-200 bg-slate-100 py-20 dark:border-white/5 dark:bg-petrol-900">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
             <h2 className="font-display text-3xl font-bold md:text-4xl">
@@ -201,9 +201,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15 }}
-                className="group rounded-2xl border border-white/10 bg-petrol-950 p-8 transition-all duration-300 hover:border-gold-500/50 hover:shadow-lg hover:shadow-gold-500/10"
+                className="group rounded-2xl border border-white/10 bg-petrol-950 p-8 transition-all duration-300 hover:border-brand-red/50 hover:shadow-lg hover:shadow-brand-red/10"
               >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-petrol-800 text-gold-500 transition-colors group-hover:bg-gold-500 group-hover:text-petrol-950">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-petrol-800 text-brand-red transition-colors group-hover:bg-brand-red group-hover:text-white">
                   <value.icon className="h-7 w-7" />
                 </div>
                 <h3 className="text-xl font-bold">{value.title}</h3>
@@ -215,7 +215,7 @@ export default function AboutPage() {
       </section>
 
       <section className="relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-gold-600/10" />
+        <div className="absolute inset-0 bg-brand-yellow/20" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-petrol-800 to-petrol-900 p-12 text-center shadow-2xl">
             <h2 className="font-display text-3xl font-bold md:text-4xl">
@@ -226,7 +226,7 @@ export default function AboutPage() {
               Congo Energy Logistics.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-              <button className="rounded-lg bg-gold-500 px-8 py-4 font-bold text-petrol-950 transition-colors hover:bg-gold-400 shadow-lg shadow-gold-500/20">
+              <button className="rounded-lg bg-brand-red px-8 py-4 font-bold text-white transition-colors hover:bg-brand-coral shadow-lg shadow-brand-red/20">
                 Devenir partenaire B2B
               </button>
               <button className="flex items-center justify-center gap-2 rounded-lg border border-white/20 px-8 py-4 font-semibold text-white transition-colors hover:bg-white/5">

@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Droplet, Menu, X } from "lucide-react";
 import type { NavItem } from "@/lib/types";
+import Image from "next/image";
+import logo from "@/../asset/logo/2-removebg-preview.png";
 
 const navLinks: NavItem[] = [
   { label: "Accueil", href: "/" },
@@ -41,15 +43,22 @@ const Navbar = () => {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 shadow-lg shadow-gold-500/30 transition-all group-hover:shadow-gold-500/50">
-            <Droplet className="h-6 w-6 text-petrol-950" />
+          <span className="flex h-11 w-11 relative">
+            <Image
+              src={logo}
+              alt="DAPI OIL SARL"
+              fill
+              className="object-contain"
+              sizes="48px"
+              priority
+            />
           </span>
           <span className="flex flex-col leading-none">
             <span className="font-display text-xl font-bold tracking-tight text-white">
-              CONGO<span className="text-gold-500">ENERGY</span>
+              DAPI <span className="text-gold-500">OIL</span>
             </span>
             <span className="text-[0.65rem] uppercase tracking-[0.2em] text-gray-400">
-              Logistics
+              SARL
             </span>
           </span>
         </Link>

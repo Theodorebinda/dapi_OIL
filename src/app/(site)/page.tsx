@@ -35,7 +35,7 @@ const activities = [
 
 export default function HomePage() {
   return (
-    <div className="space-y-0 bg-petrol-950 text-white">
+    <div className="space-y-0 bg-white text-slate-900 dark:bg-petrol-950 dark:text-white">
       <section className="relative flex min-h-screen items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -45,7 +45,7 @@ export default function HomePage() {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-petrol-950/75" />
+          <div className="absolute inset-0 bg-white/70 dark:bg-petrol-950/75" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 pt-10">
@@ -55,13 +55,13 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-medium text-gold-400 backdrop-blur-sm">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-white/70 px-3 py-1 text-sm font-medium text-brand-red backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
               Leader downstream en RDC
             </div>
             <h1 className="font-display text-5xl font-extrabold leading-tight md:text-7xl">
               L&apos;énergie au cœur <br />
-              <span className="bg-gradient-to-r from-gold-400 to-amber-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-red via-brand-coral to-brand-yellow bg-clip-text text-transparent">
                 du développement.
               </span>
             </h1>
@@ -71,7 +71,7 @@ export default function HomePage() {
               responsable.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="group flex items-center justify-center gap-2 rounded-lg bg-gold-500 px-8 py-4 font-bold text-petrol-950 transition-all hover:bg-gold-400">
+              <button className="group flex items-center justify-center gap-2 rounded-lg bg-brand-red px-8 py-4 font-bold text-white transition-all hover:bg-brand-coral">
                 Découvrir nos solutions
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </button>
@@ -83,7 +83,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-white/5 bg-petrol-900 py-20">
+      <section className="border-b border-slate-200 bg-slate-50 py-20 dark:border-white/5 dark:bg-petrol-900">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
@@ -98,7 +98,7 @@ export default function HomePage() {
                 <h3 className="font-display text-4xl font-bold text-white md:text-5xl">
                   {stat.value}
                 </h3>
-                <p className="mt-2 text-sm font-medium uppercase tracking-wide text-gold-500">
+                <p className="mt-2 text-sm font-medium uppercase tracking-wide text-brand-green">
                   {stat.label}
                 </p>
               </motion.div>
@@ -107,11 +107,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-petrol-950 py-24">
+      <section className="bg-white py-24 dark:bg-petrol-950">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-500">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-red">
                 Notre expertise
               </p>
               <h2 className="font-display text-3xl font-bold md:text-4xl">
@@ -123,7 +123,7 @@ export default function HomePage() {
                 approvisionnement continu des industries et des territoires.
               </p>
             </div>
-            <button className="hidden items-center gap-2 text-gold-500 transition-colors hover:text-gold-400 md:flex">
+            <button className="hidden items-center gap-2 text-brand-red transition-colors hover:text-brand-coral md:flex">
               Voir toutes les activités <ArrowRight className="h-4 w-4" />
             </button>
           </div>
@@ -149,7 +149,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="absolute inset-x-0 bottom-0 z-10 p-8">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-gold-500 text-petrol-950">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-brand-red text-white">
                     <activity.icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-display text-2xl font-bold">

@@ -1,8 +1,8 @@
-// File: /home/theodore-samba/All_Projet/Dapi_oil/congo-energy-logistics/app/(site)/layout.tsx
-import * as entry from '../../../../app/(site)/layout.js'
+// File: /home/theodore-samba/All_Projet/Dapi_oil/congo-energy-logistics/src/app/(site)/layout.tsx
+import * as entry from '../../../../src/app/(site)/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../app/(site)/layout.js')
+type TEntry = typeof import('../../../../src/app/(site)/layout.js')
 
 type SegmentParams<T extends Object = any> = T extends Record<string, any>
   ? { [K in keyof T]: T[K] extends string ? string | string[] | undefined : never }

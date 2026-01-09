@@ -3,11 +3,20 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
+  --brand-red: #e82735;
+  --brand-coral: #fc7655;
+  --brand-green: #1e8d3e;
+  --brand-yellow: #f6fe51;
+  --brand-forest: #245134;
+}
+
+:root.dark {
   color-scheme: dark;
 }
 
 body {
-  @apply bg-petrol-950 text-slate-50 antialiased;
+  @apply bg-white text-slate-900 antialiased dark:bg-petrol-950 dark:text-slate-50;
 }
 
 a {
