@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Droplet, Globe2, Truck } from "lucide-react";
 import type { StatItem } from "@/lib/types";
+import HeaderImage from "@/../asset/images/portrait-femme.jpg";
 
 const stats: StatItem[] = [
   { value: "15K+", label: "Barils / Jour" },
@@ -39,7 +40,7 @@ export default function HomePage() {
       <section className="relative flex min-h-screen items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1516937941348-c09e554b944c?q=80&w=2064&auto=format&fit=crop"
+            src={HeaderImage}
             alt="Industrie pétrolière"
             fill
             priority
@@ -48,38 +49,40 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-white/70 dark:bg-petrol-950/75" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-white/70 px-3 py-1 text-sm font-medium text-brand-red backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
-              Leader downstream en RDC
-            </div>
-            <h1 className="font-display text-5xl font-extrabold leading-tight md:text-7xl">
-              L&apos;énergie au cœur <br />
-              <span className="bg-gradient-to-r from-brand-red via-brand-coral to-brand-yellow bg-clip-text text-transparent">
-                du développement.
-              </span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-relaxed text-gray-200">
-              Nous assurons la vitalité économique de la République Démocratique
-              du Congo grâce à une logistique pétrolière robuste, innovante et
-              responsable.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="group flex items-center justify-center gap-2 rounded-lg bg-brand-red px-8 py-4 font-bold text-white transition-all hover:bg-brand-coral">
-                Découvrir nos solutions
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </button>
-              <button className="rounded-lg border border-white/20 px-8 py-4 font-semibold text-white transition-all hover:bg-white/5">
-                Contactez-nous
-              </button>
-            </div>
-          </motion.div>
+        <div className="relative z-10   w-full  pt-6">
+          <div className="w-full mx-auto max-w-6xl px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="w-full max-w-7xl"
+            >
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-white/70  py-1 text-sm font-medium text-brand-red backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" />
+                Leader downstream en RDC
+              </div>
+              <h1 className="font-display text-5xl font-extrabold leading-tight md:text-7xl">
+                L&apos;énergie au cœur <br />
+                <span className="bg-gradient-to-r from-brand-red via-brand-coral to-brand-yellow bg-clip-text text-transparent">
+                  du développement.
+                </span>
+              </h1>
+              <p className="mt-6 max-w-2xl text-xl leading-relaxed text-gray-200">
+                Nous assurons la vitalité économique de la République
+                Démocratique du Congo grâce à une logistique pétrolière robuste,
+                innovante et responsable.
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <button className="group flex items-center justify-center gap-2 rounded-lg bg-brand-red px-8 py-4 font-bold text-white transition-all hover:bg-brand-coral">
+                  Découvrir nos solutions
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </button>
+                <button className="rounded-lg border border-white/20 px-8 py-4 font-semibold text-white transition-all hover:bg-white/5">
+                  Contactez-nous
+                </button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

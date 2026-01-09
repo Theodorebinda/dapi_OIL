@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Droplet, Menu, X } from "lucide-react";
 import type { NavItem } from "@/lib/types";
+import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
 import logo from "@/../asset/logo/2-removebg-preview.png";
 
@@ -63,7 +64,7 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -83,6 +84,7 @@ const Navbar = () => {
               </Link>
             );
           })}
+          <ThemeToggle />
           <button className="rounded-lg bg-gold-500 px-5 py-2.5 text-sm font-bold text-petrol-950 transition-colors hover:bg-gold-400">
             Espace Client
           </button>
@@ -119,6 +121,9 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-2">
+                <ThemeToggle />
+              </div>
               <button className="w-full rounded-lg bg-gold-500 px-5 py-3 font-bold text-petrol-950">
                 Espace Client
               </button>
