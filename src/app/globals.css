@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-petrol-950 text-slate-50 antialiased;
+}
+
+a {
+  @apply underline-offset-4;
+}
+
+::selection {
+  background: theme("colors.gold.500");
+  color: theme("colors.petrol.950");
+}
+
