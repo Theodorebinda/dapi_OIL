@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Droplet, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import type { NavItem } from "@/lib/types";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
@@ -38,7 +38,7 @@ const Navbar = () => {
     <nav
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         isScrolled
-          ? "bg-petrol-950/85 backdrop-blur-md border-white/10 shadow-lg shadow-petrol-900/40"
+          ? "bg-[var(--bg)]/90 backdrop-blur-md border-white/10 shadow-lg shadow-petrol-900/40"
           : "bg-transparent border-transparent"
       }`}
     >
@@ -55,7 +55,7 @@ const Navbar = () => {
             />
           </span>
           <div className="flex flex-col leading-none">
-            <span className="font-display text-xl font-bold tracking-tight text-white">
+            <span className="font-display text-xl font-bold tracking-tight text-[var(--text)]">
               DAPI <span className="text-brand-green">OIL</span>
             </span>
             <div className="flex items-center gap-2">
@@ -76,12 +76,14 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className={`group relative text-sm font-medium tracking-wide transition-colors ${
-                  isActive ? "text-gold-400" : "text-gray-200 hover:text-white"
+                  isActive
+                    ? "text-[var(--brand-red)]"
+                    : "text-[color:rgba(255,255,255,0.78)] hover:text-white"
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-[2px] bg-gold-500 transition-all ${
+                  className={`absolute -bottom-1 left-0 h-[2px] bg-[var(--brand-red)] transition-all ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -89,7 +91,7 @@ const Navbar = () => {
             );
           })}
           <ThemeToggle />
-          <button className="rounded-lg bg-gold-500 px-5 py-2.5 text-sm font-bold text-petrol-950 transition-colors hover:bg-gold-400">
+          <button className="rounded-lg bg-[var(--brand-red)] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[var(--brand-coral)]">
             Espace Client
           </button>
         </div>
@@ -111,15 +113,15 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -12 }}
             className="md:hidden"
           >
-            <div className="space-y-4 border-t border-white/10 bg-petrol-900/95 px-6 py-5 backdrop-blur-xl">
+            <div className="space-y-4 border-t border-white/10 bg-[var(--bg)]/95 px-6 py-5 backdrop-blur-xl">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`block text-lg font-medium ${
                     pathname === link.href
-                      ? "text-gold-400"
-                      : "text-gray-100 hover:text-white"
+                      ? "text-[var(--brand-red)]"
+                      : "text-[color:rgba(255,255,255,0.82)] hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -128,7 +130,7 @@ const Navbar = () => {
               <div className="pt-2">
                 <ThemeToggle />
               </div>
-              <button className="w-full rounded-lg bg-gold-500 px-5 py-3 font-bold text-petrol-950">
+              <button className="w-full rounded-lg bg-[var(--brand-red)] px-5 py-3 font-bold text-white hover:bg-[var(--brand-coral)] transition">
                 Espace Client
               </button>
             </div>

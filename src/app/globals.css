@@ -9,14 +9,21 @@
   --brand-green: #1e8d3e;
   --brand-yellow: #f6fe51;
   --brand-forest: #245134;
+  --bg: #ffffff;
+  --text: #0f172a;
 }
 
-:root.dark {
+:root[data-theme="dark"] {
   color-scheme: dark;
+  --bg: #0b1220;
+  --text: #e2e8f0;
 }
 
 body {
-  @apply bg-white text-slate-900 antialiased dark:bg-petrol-950 dark:text-slate-50;
+  background-color: var(--bg);
+  color: var(--text);
+  @apply antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 a {
@@ -24,7 +31,6 @@ a {
 }
 
 ::selection {
-  background: theme("colors.gold.500");
-  color: theme("colors.petrol.950");
+  background: var(--brand-red);
+  color: #ffffff;
 }
-

@@ -1108,6 +1108,9 @@ video {
 .bg-white\/70 {
   background-color: rgb(255 255 255 / 0.7);
 }
+.bg-\[var\(--brand-red\)\] {
+  background-color: var(--brand-red);
+}
 .bg-\[linear-gradient\(to_right\2c \#80808012_1px\2c transparent_1px\)\2c linear-gradient\(to_bottom\2c \#80808012_1px\2c transparent_1px\)\] {
   background-image: linear-gradient(to right,#80808012 1px,transparent 1px),linear-gradient(to bottom,#80808012 1px,transparent 1px);
 }
@@ -1401,6 +1404,18 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
+.text-\[color\:rgba\(255\2c 255\2c 255\2c 0\.78\)\] {
+  color: rgba(255,255,255,0.78);
+}
+.text-\[color\:rgba\(255\2c 255\2c 255\2c 0\.82\)\] {
+  color: rgba(255,255,255,0.82);
+}
+.text-\[var\(--brand-red\)\] {
+  color: var(--brand-red);
+}
+.text-\[var\(--text\)\] {
+  color: var(--text);
+}
 .opacity-0 {
   opacity: 0;
 }
@@ -1483,26 +1498,22 @@ video {
   --brand-green: #1e8d3e;
   --brand-yellow: #f6fe51;
   --brand-forest: #245134;
+  --bg: #ffffff;
+  --text: #0f172a;
 }
 
-:root.dark {
+:root[data-theme="dark"] {
   color-scheme: dark;
+  --bg: #0b1220;
+  --text: #e2e8f0;
 }
 
 body {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity, 1));
+  background-color: var(--bg);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(11 18 32 / var(--tw-bg-opacity, 1));
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity, 1));
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 a {
@@ -1510,13 +1521,13 @@ a {
 }
 
 ::-moz-selection {
-  background: #e8b53a;
-  color: #0b1220;
+  background: var(--brand-red);
+  color: #ffffff;
 }
 
 ::selection {
-  background: #e8b53a;
-  color: #0b1220;
+  background: var(--brand-red);
+  color: #ffffff;
 }
 
 .hover\:border-brand-red\/50:hover {
@@ -1544,6 +1555,10 @@ a {
 
 .hover\:bg-white\/5:hover {
   background-color: rgb(255 255 255 / 0.05);
+}
+
+.hover\:bg-\[var\(--brand-coral\)\]:hover {
+  background-color: var(--brand-coral);
 }
 
 .hover\:text-brand-coral:hover {
@@ -1660,11 +1675,6 @@ a {
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 
-.dark\:text-slate-50:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity, 1));
-}
-
 .dark\:text-white:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -1769,5 +1779,4 @@ a {
     flex-direction: row;
   }
 }
-
 

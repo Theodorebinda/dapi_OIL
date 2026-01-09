@@ -62,15 +62,16 @@ export default function HomePage() {
                 Leader downstream en RDC
               </div>
               <h1 className="font-display text-5xl font-extrabold leading-tight md:text-7xl">
-                L&apos;énergie au cœur <br />
+                Votre <br />
+                Partenaire fiable en <br />
                 <span className="bg-gradient-to-r from-brand-red via-brand-coral to-brand-yellow bg-clip-text text-transparent">
-                  du développement.
+                  approvisionnement.
                 </span>
               </h1>
               <p className="mt-6 max-w-2xl text-xl leading-relaxed text-gray-200">
-                Nous assurons la vitalité économique de la République
-                Démocratique du Congo grâce à une logistique pétrolière robuste,
-                innovante et responsable.
+                De la fourniture à la livraison, nous assurons un
+                approvisionnement pétrolier continu et fiable pour soutenir vos
+                opérations.”
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <button className="group flex items-center justify-center gap-2 rounded-lg bg-brand-red px-8 py-4 font-bold text-white transition-all hover:bg-brand-coral">

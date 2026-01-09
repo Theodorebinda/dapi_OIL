@@ -34,10 +34,8 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="fr" className="dark bg-white dark:bg-petrol-950">
-      <body
-        className={`${inter.variable} ${playfair.variable} font-sans bg-white text-slate-900 dark:bg-petrol-950 dark:text-slate-50`}
-      >
+    <html lang="fr">
+      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
