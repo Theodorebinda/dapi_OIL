@@ -17,9 +17,9 @@ import AboutImage from "@/../public/asset/images/distribution.jpg";
 
 export default function AboutPage() {
   return (
-    <div className="bg-white text-slate-900 dark:bg-petrol-950 dark:text-white ">
+    <div className="bg-white text-slate-900 dark:bg-petrol-950 dark:text-white min-h-screen w-full">
       <section className="relative overflow-hidden py-24 md:pt-32">
-        <div className="relative z-10 mx-auto md:max-w-6xl md:px-6 px-3 w-full">
+        <div className="relative z-10 mx-auto w-full md:max-w-6xl md:px-6 px-3">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
