@@ -59,7 +59,7 @@ const storySections: StorySection[] = [
     description:
       "Camions, barges et rail pour sécuriser les flux en zones complexes, avec maintenance prédictive.",
     image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=1200&auto=format&fit=crop",
+      "https://img.freepik.com/photos-premium/vue-interne-site-industriel_100488-1104.jpg",
     badges: ["Track & trace", "Maintenance IA"],
     steps: [
       "Planification dynamique des tournées",
@@ -197,9 +197,9 @@ export default function HomePage() {
                 approvisionnement continu des industries et des territoires.
               </p>
             </div>
-            <button className="hidden items-center gap-2 text-[var(--brand-red)] transition-colors hover:text-[var(--brand-coral)] md:flex">
+            {/* <button className="hidden items-center gap-2 text-[var(--brand-red)] transition-colors hover:text-[var(--brand-coral)] md:flex">
               Voir toutes les activités <ArrowRight className="h-4 w-4" />
-            </button>
+            </button> */}
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -218,9 +218,9 @@ export default function HomePage() {
                     alt={activity.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  quality={70}
-                />
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={70}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-[rgb(var(--bg-rgb)/0.6)] to-transparent" />
                 </div>
 
