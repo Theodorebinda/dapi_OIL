@@ -17,13 +17,9 @@ import AboutImage from "@/../public/asset/images/distribution.jpg";
 
 export default function AboutPage() {
   return (
-    <div className="bg-white text-slate-900 dark:bg-petrol-950 dark:text-white">
+    <div className="bg-white text-slate-900 dark:bg-petrol-950 dark:text-white ">
       <section className="relative overflow-hidden py-24 md:pt-32">
-        <div className="pointer-events-none absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <div className="relative z-10 mx-auto max-w-6xl md:px-6 px-3">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,7 +58,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-slate-100 py-10 md:py-20 dark:bg-petrol-900/30">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 px-6 lg:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 md:px-6 px-3 lg:flex-row">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -129,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       <section className="py-20 md:py-32">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl md:px-6 px-3">
           <div className="mb-16 text-center">
             <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Notre expertise
@@ -177,7 +173,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-slate-200 bg-slate-100 py-20 dark:border-white/5 dark:bg-petrol-900">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl md:px-6 px-3">
           <div className="mb-16 text-center">
             <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Nos valeurs fondamentales
@@ -227,7 +223,7 @@ export default function AboutPage() {
 
       <section className="relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-brand-gray" />
-        <div className="relative z-10 mx-auto max-w-4xl px-6">
+        <div className="relative z-10 mx-auto max-w-4xl md:px-6 px-3">
           <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-petrol-800 to-petrol-900 p-12 text-center shadow-2xl">
             <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Prêt à sécuriser votre approvisionnement ?

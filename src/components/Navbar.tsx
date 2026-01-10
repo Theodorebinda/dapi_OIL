@@ -163,7 +163,7 @@ const Navbar = () => {
                   // aria-disabled="true"
                   disabled
                   onClick={(e) => e.preventDefault()}
-                  className="w-full rounded-lg bg-[var(--brand-red)]/70 px-5 py-3 font-bold text-white opacity-80 transition cursor-not-allowed"
+                  className="rounded-lg bg-brand-red opacity-25 py-2.5 px-5 text-sm font-bold text-white transition-colors cursor-not-allowed"
                 >
                   Espace Client
                 </button>

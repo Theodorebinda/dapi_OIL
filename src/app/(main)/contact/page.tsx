@@ -28,7 +28,7 @@ const contacts = [
 export default function ContactPage() {
   return (
     <div className="bg-[var(--bg)] text-[var(--text)] overflow-hidden ">
-      <section className="relative flex min-h-[60vh] items-center">
+      <section className="relative flex md:min-h-[60vh] min-h-[40vh] items-center">
         <Image
           src="https://img.freepik.com/photos-gratuite/personne-au-bureau-pendant-journee-travail_23-2150690164.jpg"
           alt="Logistique et énergie"
@@ -57,10 +57,10 @@ export default function ContactPage() {
       </section>
 
       {/* FORM + CONTACT */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className=" gap-16 px-6 flex lg:flex-row flex-col items-center  justify-between">
+      <section className="md:py-20 py-10 md:max-w-6xl max-w-full mx-auto  md:px-0 px-2">
+        <div className=" gap-16  flex lg:flex-row flex-col items-center  justify-between">
           {/* FORM */}
-          <div className="rounded-3xl bg-[rgb(var(--bg-rgb)/0.75)]  w-4/7  p-8 ">
+          <div className="rounded-3xl bg-[rgb(var(--bg-rgb)/0.75)]  md:w-4/7 w-full  md:p-8 p-2">
             <h2 className="font-display text-2xl font-bold">
               Envoyer un message
             </h2>
@@ -122,7 +122,7 @@ export default function ContactPage() {
                 <textarea
                   rows={5}
                   placeholder="Décrivez votre besoin…"
-                  className="w-full resize-none rounded-xl bg-[rgb(var(--bg-rgb)/0.8)] shadow-sm px-4 py-3 outline-none transition focus:ring-2 focus:ring-[var(--brand-green)] focus:ring-offset-0"
+                  className="w-full resize-none border border-[rgb(var(--text-rgb)/0.12)] rounded-xl bg-[rgb(var(--bg-rgb)/0.8)] shadow-sm px-4 py-3 outline-none transition focus:ring-2 focus:ring-[var(--brand-green)] focus:ring-offset-0"
                 />
               </div>
 
