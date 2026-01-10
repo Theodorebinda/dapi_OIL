@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://dapioil.com/sitemap.xml
+Host: dapioil.com

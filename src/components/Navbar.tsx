@@ -41,7 +41,7 @@ const Navbar = () => {
           : "bg-transparent border-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between md:px-6 py-4 px-2">
         <Link href="/" className="flex items-center gap-2 group">
           <span className="flex h-11 w-11 relative">
             <Image
@@ -114,14 +114,24 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        <div className="md:hidden flex justify-end items-center gap-2">
+          <div className="pt-2">
+            <ThemeToggle />
+          </div>
 
-        <button
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white md:hidden"
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          aria-label="Ouvrir le menu"
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
+          <button
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--text/60)]  md:hidden"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            aria-label="Ouvrir le menu"
+            title="menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="text-[var(--text)] " />
+            ) : (
+              <Menu className="text-[var(--text)] -" />
+            )}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -132,7 +142,7 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -12 }}
             className="md:hidden"
           >
-            <div className="space-y-4 border-t border-white/10 bg-[var(--bg)]/95 px-6 py-5 backdrop-blur-xl">
+            <div className="space-y-4 border-t border-white/10 bg-[var(--bg)]/95 px-6 py-5 backdrop-blur-2xl">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -143,20 +153,17 @@ const Navbar = () => {
                       : "text-[var(--text)] hover:text-[var(--brand-red)]"
                   }`}
                 >
-                  button
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2">
-                <ThemeToggle />
-              </div>
+
               <div className="relative group">
                 <button
                   type="button"
                   // aria-disabled="true"
                   disabled
                   onClick={(e) => e.preventDefault()}
-                  className="w-full rounded-lg bg-[var(--brand-red)]/70 px-5 py-3 font-bold text-white opacity-80 transition cursor-not-allowed"
+                  className="rounded-lg bg-brand-red opacity-25 py-2.5 px-5 text-sm font-bold text-white transition-colors cursor-not-allowed"
                 >
                   Espace Client
                 </button>

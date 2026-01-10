@@ -58,7 +58,8 @@ export default function StickyVisualStory({
                 alt={section.imageAlt || section.title}
                 fill
                 className="object-cover"
-                sizes="100vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={70}
               />
             </div>
             <div className="space-y-4 py-4">

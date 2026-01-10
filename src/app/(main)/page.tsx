@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Droplet, Globe2, Truck } from "lucide-react";
+import { ArrowDown, ArrowRight, Droplet, Truck } from "lucide-react";
+import { useRouter } from "next/navigation";
 import type { StatItem } from "@/lib/types";
 import type { StorySection } from "@/lib/story-section.type";
 import StickyVisualStory from "@/components/sticky/StickyVisualStory";
@@ -87,9 +88,18 @@ const storySections: StorySection[] = [
 ];
 
 export default function HomePage() {
+  const router = useRouter();
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="space-y-0 bg-white text-slate-900 dark:bg-petrol-950 dark:text-white">
-      <section className="relative flex min-h-screen items-center overflow-hidden pt-10 md:pt-0">
+      <section className="relative flex min-h-screen items-center overflow-hidden  md:pt-0">
         <div className="absolute inset-0">
           <Image
             src={HeaderImage}
@@ -97,12 +107,14 @@ export default function HomePage() {
             fill
             priority
             className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 100vw"
+            quality={70}
           />
           <div className="absolute inset-0 bg-white/70 dark:bg-petrol-950/75" />
         </div>
 
         <div className="relative z-10   w-full  pt-6">
-          <div className="w-full mx-auto max-w-6xl px-6">
+          <div className="w-full mx-auto max-w-6xl md:px-6 px-3">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -126,11 +138,17 @@ export default function HomePage() {
                 opérations.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <button className="group flex items-center justify-center gap-2 rounded-lg bg-brand-green px-8 py-4 font-bold text-white transition-all hover:bg-brand-forest">
+                <button
+                  onClick={() => scrollToSection("sticky-story")}
+                  className="group flex items-center justify-center gap-2 rounded-lg bg-brand-green px-8 py-4 font-bold text-white transition-all hover:bg-brand-forest"
+                >
                   Découvrir nos solutions
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowDown className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </button>
-                <button className="rounded-lg border border-[var(--text)]/20 px-8 py-4 font-semibold text-[var(--text)] transition-all hover:bg-[var(--text)]/5">
+                <button
+                  onClick={() => router.push("/contact")}
+                  className="rounded-lg border border-[var(--text)]/20 px-8 py-4 font-semibold text-[var(--text)] transition-all hover:bg-[var(--text)]/5"
+                >
                   Contactez-nous
                 </button>
               </div>
@@ -140,7 +158,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-[rgb(var(--bg-rgb)/0.95)] py-20">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl md:px-6 px-3">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat, index) => (
               <motion.div
@@ -163,8 +181,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-gray-50 dark:bg-gray-800 py-24">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="bg-[rgb(var(--bg-rgb)/0.9)] py-24">
+        <div className="mx-auto max-w-6xl md:px-6 px-3  ">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-red)]">
@@ -200,7 +218,9 @@ export default function HomePage() {
                     alt={activity.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={70}
+                />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-[rgb(var(--bg-rgb)/0.6)] to-transparent" />
                 </div>
 
@@ -220,7 +240,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <StickyVisualStory sections={storySections} />
+      <div id="sticky-story" className="scroll-m-24">
+        <StickyVisualStory sections={storySections} />
+      </div>
     </div>
   );
 }

@@ -24,7 +24,8 @@ export function SectionImageBlock({ activeSection }: { activeSection?: StorySect
               alt={activeSection.imageAlt || activeSection.title}
               fill
               className="object-cover"
-              sizes="400px"
+              sizes="(max-width: 1024px) 100vw, 400px"
+              quality={70}
               priority
             />
           </motion.div>
