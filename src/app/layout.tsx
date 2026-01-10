@@ -68,6 +68,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           content="Fourniture, logistique et distribution pétrolière en RDC : transport multimodal, stockage sécurisé, qualité et engagements RSE."
         />
         <script
+          id="org-jsonld"
+          suppressHydrationWarning
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />

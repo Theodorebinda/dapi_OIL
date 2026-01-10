@@ -5,12 +5,12 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white">
       {/* Top separator */}
-      <div className="mx-auto max-w-7xl px-6 pt-20">
+      <div className="mx-auto max-w-full md:max-w-6xl md:px-6 px-3 pt-20">
         <div className="mb-16 border-t border-white/20" />
       </div>
 
       {/* Main footer */}
-      <div className="mx-auto max-w-7xl px-6 pb-20">
+      <div className="mx-auto max-w-full md:max-w-6xl md:px-6 px-3 pb-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
           {/* Brand */}
           <div className="md:col-span-2 space-y-4">
@@ -80,7 +80,7 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 shrink-0 text-brand-red" />
                 <span>
                   DAPI OIL SARL – BP 1609 Kinshasa 1 Gombe, 156 Boulevard du 30
-                  Juin, Kinshasa, RDC, RDC
+                  Juin, Kinshasa, RDC
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -91,7 +91,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-brand-red" />
-                <span>contact@dapioil.com</span>
+                <span>contact@dapioil.cd</span>
               </li>
             </ul>
           </div>
