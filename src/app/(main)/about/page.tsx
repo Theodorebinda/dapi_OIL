@@ -17,9 +17,9 @@ import AboutImage from "@/../public/asset/images/distribution.jpg";
 
 export default function AboutPage() {
   return (
-    <div className="space-y-0 w-full md:max-w-6xl md:px-6 px-3 mx-auto  bg-white text-slate-900 dark:bg-petrol-950 dark:text-white ">
+    <div className="bg-white text-slate-900 dark:bg-petrol-950 dark:text-white ">
       <section className="relative overflow-hidden py-24 md:pt-32">
-        <div className="relative z-10 w-full mx-auto ">
+        <div className="relative z-10 mx-auto md:max-w-6xl md:px-6 px-3 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-slate-100 py-10 md:py-20 dark:bg-petrol-900/30">
-        <div className=" flex  flex-col items-center gap-16  lg:flex-row">
+        <div className="mx-auto flex w-full md:max-w-6xl flex-col items-center gap-16 md:px-6 px-3 lg:flex-row">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       <section className="py-20 md:py-32">
-        <div className="">
+        <div className="mx-auto w-full md:max-w-6xl md:px-6 px-3">
           <div className="mb-16 text-center">
             <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Notre expertise
@@ -173,7 +173,7 @@ export default function AboutPage() {
       </section>
 
       <section className="border-y border-slate-200 bg-slate-100 py-20 dark:border-white/5 dark:bg-petrol-900">
-        <div className="">
+        <div className="mx-auto w-full md:max-w-6xl md:px-6 px-3">
           <div className="mb-16 text-center">
             <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Nos valeurs fondamentales
@@ -204,12 +204,12 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15 }}
-                className="group rounded-2xl border border-[rgb(var(--text-rgb)/0.08)] bg-[rgb(var(--bg-rgb)/0.7)] p-8 transition-all duration-300 hover:border-[var(--brand-green)] hover:shadow-lg hover:shadow-[var(--brand-green)]/20"
+                className="group rounded-2xl   d p-8 transition-all duration-300 hover:border-brand-red/50 hover:shadow-lg hover:shadow-brand-red/10"
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-petrol-800 text-brand-red transition-colors group-hover:bg-brand-red group-hover:text-white">
                   <value.icon className="h-7 w-7" />
                 </div>
-                <h3 className="text-xl font-bold text-[var(--text)]">
+                <h3 className="text-xl font-bold text-brand-green">
                   {value.title}
                 </h3>
                 <p className="mt-3 text-[rgb(var(--text-rgb)/0.75)]">
@@ -223,8 +223,8 @@ export default function AboutPage() {
 
       <section className="relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-brand-gray" />
-        <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10">
-          <div className="rounded-3xl border border-[rgb(var(--text-rgb)/0.1)] bg-gradient-to-br from-[rgb(var(--bg-rgb)/0.9)] to-[rgb(var(--bg-rgb)/0.8)] p-12 text-center shadow-2xl">
+        <div className="relative z-10 mx-auto w-full md:max-w-4xl md:px-6 px-3">
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-petrol-800 to-petrol-900 p-12 text-center shadow-2xl">
             <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Prêt à sécuriser votre approvisionnement ?
             </h2>
