@@ -26,10 +26,11 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="mx-auto max-w-4xl text-center"
           >
-            <h1 className="font-display text-3xl font-bold md:text-6xl">
+            <h1 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--brand-green)]">
               À propos de <br />{" "}
-              <span className="text-brand-green text-3xl md:text-4xl">
-                DAPI OIL SARL
+              <span className="font-display text-3xl md:text-4xl text-petrol-950 dark:text-white">
+                DAPI <span className="text-brand-green">OIL</span>{" "}
+                <span className="text-brand-red text-base">SARL</span>
               </span>
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-[var(--text)]">
