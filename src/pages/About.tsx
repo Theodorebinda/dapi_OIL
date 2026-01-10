@@ -66,7 +66,7 @@ const About: React.FC = () => {
               viewport={{ once: true }}
               className="lg:w-1/2"
             >
-              <div className="inline-block px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-[rgb(var(--bg-rgb)/0.15)] border border-[rgb(var(--brand-green-rgb,15,122,52)/0.35)] text-[var(--brand-green)]">
                 Notre Mission
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 leading-tight">

@@ -107,6 +107,8 @@ export default function HomePage() {
             fill
             priority
             className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 100vw"
+            quality={70}
           />
           <div className="absolute inset-0 bg-white/70 dark:bg-petrol-950/75" />
         </div>
@@ -179,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-gray-50 dark:bg-gray-800 py-24">
+      <section className="bg-[rgb(var(--bg-rgb)/0.9)] py-24">
         <div className="mx-auto max-w-6xl md:px-6 px-3  ">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="space-y-4">
@@ -216,7 +218,9 @@ export default function HomePage() {
                     alt={activity.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  quality={70}
+                />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-[rgb(var(--bg-rgb)/0.6)] to-transparent" />
                 </div>
 
