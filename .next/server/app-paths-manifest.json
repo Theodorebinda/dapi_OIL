@@ -1,4 +1,8 @@
 {
-  "/(main)/page": "app/(main)/page.js",
-  "/(main)/about/page": "app/(main)/about/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(main)/about/page": "app/(main)/about/page.js",
+  "/(main)/activites/page": "app/(main)/activites/page.js",
+  "/(main)/rse/page": "app/(main)/rse/page.js",
+  "/(main)/contact/page": "app/(main)/contact/page.js",
+  "/(main)/page": "app/(main)/page.js"
 }

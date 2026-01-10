@@ -15,7 +15,6 @@ const navLinks: NavItem[] = [
   { label: "À propos", href: "/about" },
   { label: "Activités", href: "/activites" },
   { label: "RSE", href: "/rse" },
-  { label: "Carrières", href: "/carrieres" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -97,9 +96,23 @@ const Navbar = () => {
             );
           })}
           <ThemeToggle />
-          <button className="rounded-lg bg-[var(--brand-red)] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[var(--brand-coral)]">
-            Espace Client
-          </button>
+          <div className="relative group">
+            <button
+              type="button"
+              // aria-disabled="true"
+              disabled
+              onClick={(e) => e.preventDefault()}
+              className="rounded-lg bg-brand-red opacity-25 py-2.5 px-5 text-sm font-bold text-white transition-colors cursor-not-allowed"
+            >
+              Espace Client
+            </button>
+            <div className="w-20 absolute left-1/2 top-full mt-2 -translate-x-1/2 ">
+              <span className="w-20 pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[rgb(var(--bg-rgb)/0.9)] px-3 py-2 text-xs text-[var(--text)] shadow-lg opacity-0 group-hover:opacity-100 transition">
+                Cette fonctionnalité est en cours d’implémentation, merci de
+                revenir plus tard.
+              </span>
+            </div>
+          </div>
         </div>
 
         <button
@@ -124,21 +137,34 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block text-lg font-medium ${
+                  className={`block text-lg buttonfont-medium ${
                     pathname === link.href
                       ? "text-[var(--brand-red)]"
                       : "text-[var(--text)] hover:text-[var(--brand-red)]"
                   }`}
                 >
+                  button
                   {link.label}
                 </Link>
               ))}
               <div className="pt-2">
                 <ThemeToggle />
               </div>
-              <button className="w-full rounded-lg bg-[var(--brand-red)] px-5 py-3 font-bold text-white hover:bg-[var(--brand-coral)] transition">
-                Espace Client
-              </button>
+              <div className="relative group">
+                <button
+                  type="button"
+                  // aria-disabled="true"
+                  disabled
+                  onClick={(e) => e.preventDefault()}
+                  className="w-full rounded-lg bg-[var(--brand-red)]/70 px-5 py-3 font-bold text-white opacity-80 transition cursor-not-allowed"
+                >
+                  Espace Client
+                </button>
+                <span className="w-20 pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[rgb(var(--bg-rgb)/0.95)] px-3 py-2 text-xs text-[var(--text)] shadow-lg opacity-0 group-hover:opacity-100 transition">
+                  Cette fonctionnalité est en cours d’implémentation, merci de
+                  revenir plus tard.
+                </span>
+              </div>
             </div>
           </motion.div>
         )}
