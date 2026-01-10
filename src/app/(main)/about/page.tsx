@@ -13,11 +13,12 @@ import {
   Warehouse,
 } from "lucide-react";
 import { FeatureCard } from "@/components/ui/FeatureCard";
+import AboutImage from "@/../public/asset/images/distribution.jpg";
 
 export default function AboutPage() {
   return (
     <div className="bg-white text-slate-900 dark:bg-petrol-950 dark:text-white">
-      <section className="relative overflow-hidden py-24 md:py-32">
+      <section className="relative overflow-hidden py-24 md:pt-32">
         <div className="pointer-events-none absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         </div>
@@ -29,14 +30,17 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="mx-auto max-w-4xl text-center"
           >
-            <h1 className="font-display text-4xl font-bold md:text-6xl">
-              Moteur du développement{" "}
-              <span className="text-brand-red">congolais</span>
+            <h1 className="font-display text-3xl font-bold md:text-6xl">
+              À propos de <br />{" "}
+              <span className="text-brand-green text-3xl md:text-4xl">
+                DAPI OIL SARL
+              </span>
             </h1>
-            <p className="mt-6 text-xl leading-relaxed text-gray-300">
-              Une expertise locale pour une distribution sans faille à travers
-              la RDC. Nous transformons les défis logistiques en opportunités de
-              croissance.
+            <p className="mt-6 text-xl leading-relaxed text-[var(--text)]">
+              Nous sommes une entreprise congolaise de référence dans la
+              fourniture, la logistique et la distribution de produits
+              pétroliers. Nous sécurisons l’énergie qui soutient la croissance
+              industrielle et économique.
             </p>
           </motion.div>
 
@@ -47,7 +51,7 @@ export default function AboutPage() {
             className="mt-16 relative h-[420px] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl md:h-[520px]"
           >
             <Image
-              src="https://images.unsplash.com/photo-1548695607-9c73430ba065?q=80&w=2868&auto=format&fit=crop"
+              src={AboutImage}
               alt="Logistique RDC"
               fill
               className="object-cover"
@@ -57,7 +61,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-slate-100 py-20 md:py-32 dark:bg-petrol-900/30">
+      <section className="bg-slate-100 py-10 md:py-20 dark:bg-petrol-900/30">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 px-6 lg:flex-row">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -70,15 +74,18 @@ export default function AboutPage() {
             </div>
             <h2 className="font-display text-3xl font-bold leading-tight md:text-4xl">
               Alimenter l&apos;avenir, <br />
-              <span className="text-gray-400">du fleuve aux frontières.</span>
+              <span className="[var(--text-rgb)]">
+                du fleuve aux frontières.
+              </span>
             </h2>
-            <div className="mt-6 space-y-6 text-lg leading-relaxed text-gray-300">
+            <div className="mt-6 space-y-6 text-lg leading-relaxed text-[var(--text)]">
               <p>
-                Dans un pays aux dimensions continentales, l&apos;énergie est le
-                sang qui irrigue l&apos;économie. Notre mission est
-                d&apos;assurer l&apos;approvisionnement ininterrompu des
-                industries minières, des infrastructures publiques et des
-                ménages, de Kinshasa aux provinces les plus reculées.
+                Dans un pays aux dimensions continentales, l’énergie est le
+                moteur de l’économie. Notre mission est d’assurer
+                l’approvisionnement ininterrompu en produits pétroliers pour les
+                industries, les transports et les ménages, de Kinshasa aux
+                provinces les plus reculées. ménages, de Kinshasa aux provinces
+                les plus reculées.
               </p>
               <p>
                 Nous ne nous contentons pas de transporter du carburant ; nous
@@ -90,11 +97,11 @@ export default function AboutPage() {
             <div className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-8">
               <div>
                 <h4 className="text-2xl font-bold text-brand-red">100%</h4>
-                <p className="text-sm text-gray-400">Couverture nationale</p>
+                <p className="text-sm text-gray-500">Couverture nationale</p>
               </div>
               <div>
-                <h4 className="text-2xl font-bold text-brand-red">+20 ans</h4>
-                <p className="text-sm text-gray-400">
+                <h4 className="text-2xl font-bold text-brand-red">+5 ans</h4>
+                <p className="text-sm text-gray-500">
                   D&apos;expérience terrain
                 </p>
               </div>
@@ -109,7 +116,7 @@ export default function AboutPage() {
           >
             <div className="relative z-10 rounded-2xl border border-white/10 bg-gradient-to-br from-white/20 via-brand-yellow/10 to-white/0 p-2 backdrop-blur-md">
               <Image
-                src="https://images.unsplash.com/photo-1628135893699-5285223e74c8?q=80&w=2670&auto=format&fit=crop"
+                src="https://img.freepik.com/photos-gratuite/pollution-exterieur-industrie-lumiere-du-jour_23-2149057676.jpg"
                 alt="Mission Congo Energy Logistics"
                 width={980}
                 height={640}
@@ -124,10 +131,10 @@ export default function AboutPage() {
       <section className="py-20 md:py-32">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
-            <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-red">
+            <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Notre expertise
             </h2>
-            <p className="mt-4 text-gray-400">
+            <p className="mt-4 text-[var(--text)]">
               Une maîtrise technique et logistique adaptée aux défis uniques de
               la République Démocratique du Congo.
             </p>
@@ -172,7 +179,7 @@ export default function AboutPage() {
       <section className="border-y border-slate-200 bg-slate-100 py-20 dark:border-white/5 dark:bg-petrol-900">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
-            <h2 className="font-display text-3xl font-bold md:text-4xl">
+            <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Nos valeurs fondamentales
             </h2>
           </div>
@@ -201,13 +208,17 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.15 }}
-                className="group rounded-2xl border border-white/10 bg-petrol-950 p-8 transition-all duration-300 hover:border-brand-red/50 hover:shadow-lg hover:shadow-brand-red/10"
+                className="group rounded-2xl   d p-8 transition-all duration-300 hover:border-brand-red/50 hover:shadow-lg hover:shadow-brand-red/10"
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-petrol-800 text-brand-red transition-colors group-hover:bg-brand-red group-hover:text-white">
                   <value.icon className="h-7 w-7" />
                 </div>
-                <h3 className="text-xl font-bold">{value.title}</h3>
-                <p className="mt-3 text-gray-400">{value.text}</p>
+                <h3 className="text-xl font-bold text-brand-green">
+                  {value.title}
+                </h3>
+                <p className="mt-3 text-[rgb(var(--text-rgb)/0.75)]">
+                  {value.text}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -215,15 +226,15 @@ export default function AboutPage() {
       </section>
 
       <section className="relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-brand-yellow/20" />
+        <div className="absolute inset-0 bg-brand-gray" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-petrol-800 to-petrol-900 p-12 text-center shadow-2xl">
-            <h2 className="font-display text-3xl font-bold md:text-4xl">
+            <h2 className="font-display text-3xl font-bold md:text-4xl text-brand-green">
               Prêt à sécuriser votre approvisionnement ?
             </h2>
             <p className="mt-4 text-lg text-gray-200">
               Rejoignez les plus grandes industries de RDC qui font confiance à
-              Congo Energy Logistics.
+              DAPI OIL SARL.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
               <button className="rounded-lg bg-brand-red px-8 py-4 font-bold text-white transition-colors hover:bg-brand-coral shadow-lg shadow-brand-red/20">

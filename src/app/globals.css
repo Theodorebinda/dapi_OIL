@@ -9,14 +9,27 @@
   --brand-green: #1e8d3e;
   --brand-yellow: #f6fe51;
   --brand-forest: #245134;
+  --bg: #ffffff;
+  --bg-rgb: 255, 255, 255;
+  --text: #0f172a;
+  --text-rgb: 15, 23, 42;
+  --overlay-rgb: 255, 255, 255;
 }
 
-:root.dark {
+:root[data-theme="dark"] {
   color-scheme: dark;
+  --bg: #0b1220;
+  --bg-rgb: 11, 18, 32;
+  --text: #e2e8f0;
+  --text-rgb: 226, 232, 240;
+  --overlay-rgb: 0, 0, 0;
 }
 
 body {
-  @apply bg-white text-slate-900 antialiased dark:bg-petrol-950 dark:text-slate-50;
+  background-color: var(--bg);
+  color: var(--text);
+  @apply antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 a {
@@ -24,7 +37,6 @@ a {
 }
 
 ::selection {
-  background: theme("colors.gold.500");
-  color: theme("colors.petrol.950");
+  background: var(--brand-red);
+  color: #ffffff;
 }
-

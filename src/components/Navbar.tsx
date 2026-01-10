@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Droplet, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import type { NavItem } from "@/lib/types";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
@@ -15,7 +15,6 @@ const navLinks: NavItem[] = [
   { label: "À propos", href: "/about" },
   { label: "Activités", href: "/activites" },
   { label: "RSE", href: "/rse" },
-  { label: "Carrières", href: "/carrieres" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -38,7 +37,7 @@ const Navbar = () => {
     <nav
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         isScrolled
-          ? "bg-petrol-950/85 backdrop-blur-md border-white/10 shadow-lg shadow-petrol-900/40"
+          ? "bg-[var(--bg)]/90 backdrop-blur-md border-white/10 shadow-lg shadow-petrol-900/40"
           : "bg-transparent border-transparent"
       }`}
     >
@@ -55,15 +54,21 @@ const Navbar = () => {
             />
           </span>
           <div className="flex flex-col leading-none">
-            <span className="font-display text-xl font-bold tracking-tight text-white">
+            <span className="font-display text-xl font-bold tracking-tight text-[var(--text)]">
               DAPI <span className="text-brand-green">OIL</span>
             </span>
             <div className="flex items-center gap-2">
-              <div className="h-[4px] w-4 bg-gray-400" aria-hidden />
-              <span className="text-[0.65rem] uppercase tracking-[0.2em] text-brand-green">
+              <div
+                className="h-[4px] w-4 bg-[var(--brand-green)]  rounded-full"
+                aria-hidden
+              />
+              <span className="text-[0.65rem] uppercase tracking-[0.2em] text-brand-green underline decoration-[var(--brand-green)] decoration-2 underline-offset-4">
                 SARL
               </span>
-              <div className="h-[4px] w-4 bg-gray-400" aria-hidden />
+              <div
+                className="h-[4px] w-4 bg-[var(--brand-red)] rounded-full"
+                aria-hidden
+              />
             </div>
           </div>
         </Link>
@@ -76,12 +81,14 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className={`group relative text-sm font-medium tracking-wide transition-colors ${
-                  isActive ? "text-gold-400" : "text-gray-200 hover:text-white"
+                  isActive
+                    ? "text-[var(--brand-red)]"
+                    : "text-[var(--text)] hover:text-[var(--brand-red)]"
                 }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-[2px] bg-gold-500 transition-all ${
+                  className={`absolute -bottom-1 left-0 h-[2px] bg-[var(--brand-red)] transition-all ${
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -89,9 +96,23 @@ const Navbar = () => {
             );
           })}
           <ThemeToggle />
-          <button className="rounded-lg bg-gold-500 px-5 py-2.5 text-sm font-bold text-petrol-950 transition-colors hover:bg-gold-400">
-            Espace Client
-          </button>
+          <div className="relative group">
+            <button
+              type="button"
+              // aria-disabled="true"
+              disabled
+              onClick={(e) => e.preventDefault()}
+              className="rounded-lg bg-brand-red opacity-25 py-2.5 px-5 text-sm font-bold text-white transition-colors cursor-not-allowed"
+            >
+              Espace Client
+            </button>
+            <div className="w-20 absolute left-1/2 top-full mt-2 -translate-x-1/2 ">
+              <span className="w-20 pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[rgb(var(--bg-rgb)/0.9)] px-3 py-2 text-xs text-[var(--text)] shadow-lg opacity-0 group-hover:opacity-100 transition">
+                Cette fonctionnalité est en cours d’implémentation, merci de
+                revenir plus tard.
+              </span>
+            </div>
+          </div>
         </div>
 
         <button
@@ -111,26 +132,39 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -12 }}
             className="md:hidden"
           >
-            <div className="space-y-4 border-t border-white/10 bg-petrol-900/95 px-6 py-5 backdrop-blur-xl">
+            <div className="space-y-4 border-t border-white/10 bg-[var(--bg)]/95 px-6 py-5 backdrop-blur-xl">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block text-lg font-medium ${
+                  className={`block text-lg buttonfont-medium ${
                     pathname === link.href
-                      ? "text-gold-400"
-                      : "text-gray-100 hover:text-white"
+                      ? "text-[var(--brand-red)]"
+                      : "text-[var(--text)] hover:text-[var(--brand-red)]"
                   }`}
                 >
+                  button
                   {link.label}
                 </Link>
               ))}
               <div className="pt-2">
                 <ThemeToggle />
               </div>
-              <button className="w-full rounded-lg bg-gold-500 px-5 py-3 font-bold text-petrol-950">
-                Espace Client
-              </button>
+              <div className="relative group">
+                <button
+                  type="button"
+                  // aria-disabled="true"
+                  disabled
+                  onClick={(e) => e.preventDefault()}
+                  className="w-full rounded-lg bg-[var(--brand-red)]/70 px-5 py-3 font-bold text-white opacity-80 transition cursor-not-allowed"
+                >
+                  Espace Client
+                </button>
+                <span className="w-20 pointer-events-none absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[rgb(var(--bg-rgb)/0.95)] px-3 py-2 text-xs text-[var(--text)] shadow-lg opacity-0 group-hover:opacity-100 transition">
+                  Cette fonctionnalité est en cours d’implémentation, merci de
+                  revenir plus tard.
+                </span>
+              </div>
             </div>
           </motion.div>
         )}
