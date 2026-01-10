@@ -17,57 +17,46 @@ const playfair = Playfair_Display({
   weight: ["400", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "DAPI OIL SARL",
-    template: "%s | DAPI OIL SARL",
-  },
-  description:
-    "Fourniture, logistique et distribution pétrolière en RDC : transport multimodal, stockage sécurisé, qualité et RSE.",
-  metadataBase: new URL("https://dapioil.com"),
-  alternates: {
-    canonical: "https://dapioil.com",
-  },
-  keywords: [
-    "logistique pétrolière",
-    "transport carburant RDC",
-    "stockage pétrolier",
-    "distribution carburant",
-    "RSE énergie",
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "DAPI OIL SARL",
+  url: "https://dapioil.com",
+  logo: "https://dapioil.com/asset/logo/2-removebg-preview.png",
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+243990615892",
+      contactType: "customer service",
+      email: "contact@dapioil.com",
+      areaServed: "CD",
+      availableLanguage: ["fr", "en"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+243850301852",
+      contactType: "customer service",
+      areaServed: "CD",
+      availableLanguage: ["fr", "en"],
+    },
   ],
-  openGraph: {
-    title: "DAPI OIL SARL",
-    description:
-      "Logistique et distribution pétrolière moderne : flotte multimodale, dépôts sécurisés, engagements RSE en RDC.",
-    url: "https://dapioil.com",
-    siteName: "DAPI OIL SARL",
-    locale: "fr_FR",
-    type: "website",
-    images: [
-      {
-        url: "https://dapioil.com/asset/logo/2-removebg-preview.png",
-        width: 512,
-        height: 512,
-        alt: "DAPI OIL SARL",
-      },
-    ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "156 Boulevard du 30 Juin",
+    postalCode: "BP 1609",
+    addressLocality: "Kinshasa",
+    addressRegion: "Kinshasa",
+    addressCountry: "CD",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "DAPI OIL SARL",
-    description:
-      "Logistique et distribution pétrolière moderne : flotte multimodale, dépôts sécurisés, engagements RSE en RDC.",
-    images: ["https://dapioil.com/asset/logo/2-removebg-preview.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/asset/logo/2-removebg-preview.png",
-    shortcut: "/asset/logo/2-removebg-preview.png",
-    apple: "/asset/logo/2-removebg-preview.png",
-  },
+  taxID: "A1502520 G",
+  identifier: [
+    {
+      "@type": "PropertyValue",
+      propertyID: "Registration.No",
+      value: "CD/KIN/RCCM/14-B-5707",
+    },
+    { "@type": "PropertyValue", propertyID: "ID.NAT", value: "01-95-N91957H" },
+  ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -77,6 +66,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta
           name="description"
           content="Fourniture, logistique et distribution pétrolière en RDC : transport multimodal, stockage sécurisé, qualité et engagements RSE."
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans`}>

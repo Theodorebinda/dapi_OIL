@@ -6,22 +6,23 @@ import Image from "next/image";
 
 const contacts = [
   {
-    title: "Numéro de téléphone",
-    value: "+243 81 000 0000",
+    title: "Numéros de téléphone",
+    value: "+243 990 615 892 / +243 850 301 852",
     icon: Phone,
-    href: "tel:+243810000000",
+    href: "tel:+243990615892",
   },
   {
     title: "Adresse email",
-    value: "contact@dapioil.cd",
+    value: "contact@dapioil.com",
     icon: Mail,
-    href: "mailto:contact@dapioil.cd",
+    href: "mailto:contact@dapioil.com",
   },
   {
-    title: "Notre localisation",
-    value: "Blvd du 30 Juin, Kinshasa - Gombe, RDC",
+    title: "Adresse",
+    value:
+      "DAPI OIL SARL – BP 1609 Kinshasa 1 Gombe, 156 Boulevard du 30 Juin, Kinshasa, RDC",
     icon: MapPin,
-    href: "https://maps.google.com/?q=Blvd+du+30+Juin,+Kinshasa",
+    href: "https://maps.google.com/?q=156+Boulevard+du+30+Juin,+Kinshasa",
   },
 ];
 

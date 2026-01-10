@@ -78,15 +78,20 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-white/70">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 shrink-0 text-brand-red" />
-                <span>156 Blvd du 30 Juin, Kinshasa – Gombe</span>
+                <span>
+                  DAPI OIL SARL – BP 1609 Kinshasa 1 Gombe, 156 Boulevard du 30
+                  Juin, Kinshasa, RDC, RDC
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-brand-red" />
-                <span>+243 990 615 892</span>
+                <span>
+                  +243 990 615 892 <br /> +243 850 301 852
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-brand-red" />
-                <span>contact@dapioil.cd</span>
+                <span>contact@dapioil.com</span>
               </li>
             </ul>
           </div>
