@@ -41,7 +41,7 @@ const Navbar = () => {
           : "bg-transparent border-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between md:px-6 py-4 px-2">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-3 py-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 group">
           <span className="flex h-11 w-11 relative">
             <Image
