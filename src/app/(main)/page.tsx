@@ -89,7 +89,7 @@ const storySections: StorySection[] = [
 export default function HomePage() {
   return (
     <div className="space-y-0 bg-white text-slate-900 dark:bg-petrol-950 dark:text-white">
-      <section className="relative flex min-h-screen items-center overflow-hidden pt-10 md:pt-0">
+      <section className="relative flex min-h-screen items-center overflow-hidden  md:pt-0">
         <div className="absolute inset-0">
           <Image
             src={HeaderImage}
