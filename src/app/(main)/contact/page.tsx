@@ -136,7 +136,7 @@ export default function ContactPage() {
             </form>
           </div>
 
-          {/* CONTACT INFOS */}
+          
           <div className="flex flex-col justify-center space-y-6 w-3/7">
             {contacts.map((item, idx) => (
               <motion.a
