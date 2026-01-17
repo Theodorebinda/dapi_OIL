@@ -57,7 +57,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FORM + CONTACT */}
+      
       <section className="md:py-20 py-10 md:max-w-6xl max-w-full mx-auto  md:px-0 px-2">
         <div className=" gap-16  flex lg:flex-row flex-col items-center  justify-between">
           {/* FORM */}
