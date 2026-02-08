@@ -1,7 +1,46 @@
-import { Facebook, Linkedin, Mail, MapPin, Phone, X, XIcon } from "lucide-react";
+"use client";
+
+import {
+  Facebook,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  X,
+  XIcon,
+} from "lucide-react";
 import Link from "next/link";
+import { FormEvent, useState } from "react";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+    "idle",
+  );
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+    setError(null);
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data?.error || "Impossible d’enregistrer l’email.");
+      }
+      setStatus("success");
+      setEmail("");
+    } catch (err) {
+      setStatus("error");
+      setError(err instanceof Error ? err.message : "Erreur inconnue");
+    }
+  };
+
   return (
     <footer className="bg-black text-white">
       {/* Top separator */}
@@ -12,7 +51,7 @@ const Footer = () => {
       {/* Main footer */}
       <div className="mx-auto max-w-full md:max-w-6xl md:px-6 px-3 pb-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-5">
-          {/* Brand */}
+          {/* Brand + Newsletter */}
           <div className="md:col-span-2 space-y-4">
             <h3 className="font-display text-2xl font-bold tracking-wide">
               DAPI <span className="text-brand-red">OIL</span> SARL
@@ -22,8 +61,45 @@ const Footer = () => {
               la distribution de produits pétroliers. Nous sécurisons l’énergie
               qui soutient la croissance industrielle et économique.
             </p>
+            <div className="space-y-3 rounded-2xl border border-white/15 bg-white/5 p-4">
+              <p className="text-sm font-semibold text-white">
+                Rejoignez notre newsletter
+              </p>
+              <p className="text-xs text-white/70">
+                Recevez nos actualités logistiques et offres directement par email.
+              </p>
+              <form
+                className="flex flex-col gap-3 sm:flex-row"
+                onSubmit={handleSubmit}
+              >
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="vous@entreprise.com"
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white placeholder:text-white/60 outline-none transition focus:border-brand-red focus:ring-2 focus:ring-brand-red/40"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="inline-flex items-center justify-center rounded-lg bg-brand-red px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-coral disabled:opacity-70"
+                >
+                  {status === "loading" ? "Envoi..." : "S’abonner"}
+                </button>
+              </form>
+              {status === "error" && (
+                <p className="text-xs font-semibold text-brand-red">
+                  {error || "Erreur, merci de réessayer."}
+                </p>
+              )}
+              {status === "success" && (
+                <p className="text-xs font-semibold text-brand-green">
+                  Merci, inscription enregistrée.
+                </p>
+              )}
+            </div>
           </div>
-
           {/* Navigation */}
           <div>
             <h4 className="mb-6 text-sm font-semibold uppercase tracking-widest text-white">
