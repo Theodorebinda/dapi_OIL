@@ -61,7 +61,7 @@ const Footer = () => {
               la distribution de produits pétroliers. Nous sécurisons l’énergie
               qui soutient la croissance industrielle et économique.
             </p>
-            <div className="space-y-3 rounded-2xl border border-white/15 bg-white/5 p-4">
+            <div className="space-y-3">
               <p className="text-sm font-semibold text-white">
                 Rejoignez notre newsletter
               </p>
@@ -161,13 +161,20 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-brand-red" />
-                <span>
-                  +243 990 615 892 <br /> +243 850 301 852
-                </span>
+                <div className="flex flex-col">
+                  <a href="tel:+243990615892" className="hover:underline">
+                    +243 990 615 892
+                  </a>
+                  <a href="tel:+243850301852" className="hover:underline">
+                    +243 850 301 852
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-brand-red" />
-                <span>contact@dapioil.com</span>
+                <a href="mailto:contact@dapioil.com" className="hover:underline">
+                  contact@dapioil.com
+                </a>
               </li>
             </ul>
           </div>
