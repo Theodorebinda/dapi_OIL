@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
+import { FormEvent, useState } from "react";
 
 const contacts = [
   {
@@ -27,6 +28,47 @@ const contacts = [
 ];
 
 export default function ContactPage() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+    "idle",
+  );
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data?.error || "Impossible d'envoyer le message.");
+      }
+      setStatus("success");
+      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+    } catch (err) {
+      setStatus("error");
+      setError(err instanceof Error ? err.message : "Erreur inconnue");
+    }
+  };
+
   return (
     <div className="bg-[var(--bg)] text-[var(--text)] overflow-hidden ">
       <section className="relative flex md:min-h-[60vh] min-h-[40vh] items-center">
@@ -69,15 +111,19 @@ export default function ContactPage() {
               Remplissez le formulaire, nous vous recontactons rapidement.
             </p>
 
-            <form className="mt-8 space-y-5">
+            <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label className="mb-1 block text-sm font-semibold">
                   Nom complet
                 </label>
                 <input
+                  name="name"
                   type="text"
                   placeholder="Votre nom"
                   className="w-full rounded-xl border border-[rgb(var(--text-rgb)/0.12)] bg-[rgb(var(--bg-rgb)/0.8)] shadow-sm px-4 py-3 outline-none transition focus:ring-2 focus:ring-[var(--brand-green)] focus:ring-offset-0"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -87,9 +133,13 @@ export default function ContactPage() {
                     Email
                   </label>
                   <input
+                    name="email"
                     type="email"
                     placeholder="vous@entreprise.com"
                     className="w-full rounded-xl border border-[rgb(var(--text-rgb)/0.12)] bg-[rgb(var(--bg-rgb)/0.8)] shadow-sm px-4 py-3 outline-none transition focus:ring-2 focus:ring-[var(--brand-green)] focus:ring-offset-0"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
 
@@ -98,9 +148,12 @@ export default function ContactPage() {
                     Téléphone
                   </label>
                   <input
+                    name="phone"
                     type="tel"
                     placeholder="+243…"
                     className="w-full rounded-xl border border-[rgb(var(--text-rgb)/0.12)] bg-[rgb(var(--bg-rgb)/0.8)] shadow-sm px-4 py-3 outline-none transition focus:ring-2 focus:ring-[var(--brand-green)] focus:ring-offset-0"
+                    value={form.phone}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -110,9 +163,13 @@ export default function ContactPage() {
                   Sujet
                 </label>
                 <input
+                  name="subject"
                   type="text"
                   placeholder="Objet de votre demande"
                   className="w-full rounded-xl border border-[rgb(var(--text-rgb)/0.12)] bg-[rgb(var(--bg-rgb)/0.8)] shadow-sm px-4 py-3 outline-none transition focus:ring-2 focus:ring-[var(--brand-green)] focus:ring-offset-0"
+                  value={form.subject}
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
@@ -121,17 +178,33 @@ export default function ContactPage() {
                   Message
                 </label>
                 <textarea
+                  name="message"
                   rows={5}
                   placeholder="Décrivez votre besoin…"
                   className="w-full resize-none border border-[rgb(var(--text-rgb)/0.12)] rounded-xl bg-[rgb(var(--bg-rgb)/0.8)] shadow-sm px-4 py-3 outline-none transition focus:ring-2 focus:ring-[var(--brand-green)] focus:ring-offset-0"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
                 />
               </div>
 
+              {status === "error" && (
+                <p className="text-sm font-semibold text-[var(--brand-red)]">
+                  {error || "Une erreur est survenue, merci de réessayer."}
+                </p>
+              )}
+              {status === "success" && (
+                <p className="text-sm font-semibold text-[var(--brand-green)]">
+                  Message envoyé avec succès.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="mt-4 inline-flex items-center justify-center rounded-xl bg-[var(--brand-green)] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[var(--brand-forest)]"
+                className="mt-4 inline-flex items-center justify-center rounded-xl bg-[var(--brand-green)] px-8 py-3 text-sm font-semibold text-white transition hover:bg-[var(--brand-forest)] disabled:opacity-70"
+                disabled={status === "loading"}
               >
-                Envoyer la demande
+                {status === "loading" ? "Envoi..." : "Envoyer la demande"}
               </button>
             </form>
           </div>
