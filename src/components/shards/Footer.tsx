@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Mail, MapPin, Phone, X, XIcon } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -91,7 +91,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-brand-red" />
-                <span>contact@dapioil.cd</span>
+                <span>contact@dapioil.com</span>
               </li>
             </ul>
           </div>
@@ -99,8 +99,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col items-center gap-6 md:flex-row md:justify-between">
+      <div className="border-t border-white/10 ">
+        <div className="mx-auto max-w-6xl px-6 py-8 flex flex-col items-center gap-6 md:flex-row md:justify-between">
           <p className="text-xs text-white/50 text-center md:text-left">
             © {new Date().getFullYear()} DAPI OIL SARL — Tous droits réservés.
             Entreprise 100% congolaise.
@@ -111,7 +111,7 @@ const Footer = () => {
               <Linkedin className="h-5 w-5 text-white/60 transition hover:text-brand-red" />
             </Link>
             <Link href="#" aria-label="Twitter">
-              <Twitter className="h-5 w-5 text-white/60 transition hover:text-brand-red" />
+              <XIcon className="h-5 w-5 text-white/60 transition hover:text-brand-red" />
             </Link>
             <Link href="#" aria-label="Facebook">
               <Facebook className="h-5 w-5 text-white/60 transition hover:text-brand-red" />
