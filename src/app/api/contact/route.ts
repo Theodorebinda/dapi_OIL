@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { buildContactEmail } from "@/lib/email/templates";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -16,8 +17,8 @@ export async function POST(request: Request) {
 
     // Email interne
     const { error } = await resend.emails.send({
-      from: "DAPI OIL SARL <onboarding@resend.dev>",
-      to: ["theodorebinda@gmail.com"],
+      from: "DAPI OIL SARL <system@dapioil.com>",
+      to: ["contact@dapioil.com"],
       subject: `[Contact] ${subject}`,
       replyTo: email,
       text: [
@@ -28,12 +29,25 @@ export async function POST(request: Request) {
         "Message:",
         message,
       ].join("\n"),
+      html: buildContactEmail({
+        title: "Nouveau message depuis le site DAPI OIL SARL",
+        intro:
+          "Vous avez reçu un nouveau message depuis le formulaire de contact du site.",
+        rows: [
+          { label: "Nom", value: name },
+          { label: "Email", value: email },
+          { label: "Téléphone", value: phone || "N/A" },
+          { label: "Sujet", value: subject },
+          { label: "Message", value: message.replace(/\n/g, "<br/>") },
+        ],
+        footerNote: "Merci de répondre directement à l'expéditeur.",
+      }),
     });
 
     if (!error) {
       // Accusé de réception vers l'utilisateur
       await resend.emails.send({
-        from: "DAPI OIL SARL <theodorebinda@gmail.com>",
+        from: "DAPI OIL SARL <contact@dapioil.com>",
         to: [email],
         subject: "Nous avons bien reçu votre message",
         text: [
@@ -49,6 +63,17 @@ export async function POST(request: Request) {
           "",
           "— Équipe DAPI OIL SARL",
         ].join("\n"),
+        html: buildContactEmail({
+          title: "Nous avons bien reçu votre message",
+          intro:
+            "Merci pour votre prise de contact. Notre équipe vous répondra très prochainement.",
+          rows: [
+            { label: "Sujet", value: subject },
+            { label: "Téléphone", value: phone || "N/A" },
+            { label: "Message", value: message.replace(/\n/g, "<br/>") },
+          ],
+          footerNote: "DAPI OIL SARL • Service relation client",
+        }),
       });
     }
 
